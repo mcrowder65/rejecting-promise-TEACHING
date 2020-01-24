@@ -6,7 +6,12 @@ function getNames(breeds) {
 
 function getBreed(breed) {
   return function(names) {
-    return names.find(name => name === breed) || "Not Found"
+    const name = names.find(name => name === breed)
+    if (name) {
+      return name
+    } else {
+      throw new Error(`${breed} not found`)
+    }
   }
 }
 
@@ -34,9 +39,14 @@ function getHamsters(breed) {
 getDog("Corgi")
   .then(dog => {
     return getCat("Russian Blue").then(cat => {
-      return getHamsters("Winter").then(hamster => {
-        return utilities.getBestPet(dog, cat, hamster)
-      })
+      return getHamsters("Winter").then(
+        hamster => {
+          return utilities.getBestPet(dog, cat, hamster)
+        },
+        error => {
+          console.error(error)
+        }
+      )
     })
   })
   .then(console.log)

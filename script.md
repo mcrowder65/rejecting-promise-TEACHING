@@ -34,6 +34,18 @@ Now, when `getBreed` throws an error, it will reject the promise.
 Let's update `Winter White` to only say `Winter` and see what happens in the terminal
 
 You can see it says, Error: Not Found, and there is an Unhandled promise rejection.
-So... let's handle that rejection! 
+So... let's handle that rejection!
 
 Do you have any guesses on how we would handle a promise rejection?
+
+So there are actually two ways to handle a promise rejection.
+
+The first way I'll show you is you can actually pass in two functions into `.then`
+
+If you see where we call `getHamsters`'s .then, we can add a second function in there.
+
+And the error gets injected into that function.
+
+And you can see that now we don't get any warnings about a promise rejection not being handled, and the undefined at the end
+is printed because console.log() is always running in the .then
+//TODO continue this and say to not use the double function, prefer .catch
