@@ -39,14 +39,13 @@ function getHamsters(breed) {
 getDog("Corgi")
   .then(dog => {
     return getCat("Russian Blue").then(cat => {
-      return getHamsters("Winter").then(
-        hamster => {
+      return getHamsters("Winter ")
+        .then(hamster => {
           return utilities.getBestPet(dog, cat, hamster)
-        },
-        error => {
-          console.error(error)
-        }
-      )
+        })
     })
   })
   .then(console.log)
+  .catch(error => {
+    console.error("outer ", error)
+  })
