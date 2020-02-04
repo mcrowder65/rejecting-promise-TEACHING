@@ -34,7 +34,9 @@ function getHamsters(breed) {
 getDog("Corgi")
   .then(dog => {
     return getCat("Russian Blue").then(cat => {
-      return utilities.getBestPet(dog, cat)
+      return getHamsters("Winter ").then(hamster => {
+        return utilities.getBestPet(dog, cat, hamster)
+      })
     })
   })
   .then(console.log)
