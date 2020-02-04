@@ -4,12 +4,6 @@ function getNames(breeds) {
   return breeds.map(breed => breed.name)
 }
 
-function getBreed(breed) {
-  return function(names) {
-    return names.find(name => name === breed) || "Not Found"
-  }
-}
-
 function getDog(breed) {
   return utilities
     .getDogBreeds()
@@ -29,6 +23,12 @@ function getHamsters(breed) {
     .getHamsters()
     .then(getNames)
     .then(getBreed(breed))
+}
+
+function getBreed(breed) {
+  return function(names) {
+    return names.find(name => name === breed) || "Not Found"
+  }
 }
 
 getDog("Corgi")
