@@ -1,4 +1,4 @@
-Hello friends!
+Welcome back, friends!
 
 We have our little tiny nodejs app that gets a list of dogs and cats and hamsters and tells which one of three would
 be the best pet.
@@ -48,7 +48,6 @@ And the error gets injected into that function.
 
 And you can see that now we don't get any warnings about a promise rejection not being handled, and the undefined at the end
 is printed because console.log() is always running in the .then
-//TODO continue this and say to not use the double function, prefer .catch
 
 The other way to catch rejected promises is to actually add a .catch clause after your .then function!
 
