@@ -119,7 +119,7 @@ Now if we make Winter White just Winter,
 
 Then now we're back to the `getHamsters` error and undefined being printed..
 
-But why didn't the outer catch get printed?
+but why is undefined getting printed?
 
 Do you notice in utilities.getBestPet, we are returning the result there?
 In the .catch method of `getHamsters`, we don't return anything. So the next resolution of that promise is not going
